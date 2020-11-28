@@ -1,25 +1,23 @@
 // UC8 Adding the script for the salary range update when user is entering the data.
  
 const salary = document.querySelector('#salary');
- const output = document.querySelector('.salary—output');
- output.textContent = salary.value;
- salary.addEventListener('input', function() 
- {
-     output.textContent = salary.value; 
- });
- 
+const output = document.querySelector('.salary—output');
+output.textContent = salary.value;
+salary.addEventListener('input', function () {
+    output.textContent = salary.value;
+});
+
 // UC 9
 const save = () => {
     try {
-        let EmployeePayRoll = createEmployeePayroll();
+        let EmployeePayroll = createEmployeePayroll();
     }
-    catch ( e) {
+    catch (e) {
         return e;
     }
 }
-
 const createEmployeePayroll = () => {
-    let employeePayrollData = new EmployeePayRoll();
+    let employeePayrollData = new EmployeePayroll();
     try {
         employeePayrollData.name = getInputValueById('#name');
     }
@@ -38,7 +36,6 @@ const createEmployeePayroll = () => {
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
-
 const getSelectedValues = (propertyValue) => {
     let allItems = document.querySelectorAll(propertyValue);
     let sellItems = [];
@@ -48,7 +45,6 @@ const getSelectedValues = (propertyValue) => {
     });
     return sellItems;
 }
-
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
